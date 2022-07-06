@@ -71,7 +71,7 @@
 
 ## 그 외 해본 것들
 
-[파이썬 소개 Markdown]()
+[파이썬 소개 Markdown](https://github.com/qlghwp123/TIL/blob/main/0706/Python.md)
 
 [나만의 마크다운 요약본](https://github.com/qlghwp123/markdown)
 
