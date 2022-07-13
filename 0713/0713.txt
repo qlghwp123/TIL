@@ -1,0 +1,62 @@
+1.
+def foo():
+    return 1, 2
+
+의 반환값을 받으면 (1, 2) 인 튜플 값이 반환된다.
+
+2. 
+함수는 반드시 값을 하나만 반환한다.
+반환값이 없으면 None을 반환한다.
+
+3.
+keyword arguments 다음에 positional arguments 사용이 불가능하다.
+(argument 이름 = 값)         (argument 에 그냥 값)
+즉 항상 positional arguments 는 keyword arguments 보다 앞에 와야한다.
+
+def add(x, y):
+    return x + y
+
+일 때,
+add(x=2, y=3) 도 가능하다.
+
+하지만
+add(x=2, 5)는 불가능하다.
+
+4. 
+https://goodthings4me.tistory.com/82
+매개변수 앞에 *을 붙이면 여러 값이나 여러 값이 들어있는 리스트, 튜플이 언패킹 되어 대입된다.
+
+ex)
+def func1(*args):
+    return sum(args)
+
+l = [1, 2, 3]
+t = (1, 2, 4)
+func1(1,2,3) # : 6
+func1(l) # : 에러
+func1(t) # : 에러
+func1(*l, *t) # : 6, 7
+
+def func2(**args):
+    sum = 0
+    for v in args.values():
+        sum += v
+    return sum(args)
+
+d = {'milk':0, 'egg':1, 'sausage':3}
+func2(d) # : 에러
+func2(**d) # : 4
+func2({'milk':0, 'egg':1, 'sausage':3}) # : 에러
+
+5.
+객체 수명주기
+
+built-in scope : 파이썬이 실행된 이후부터 영원히 유지(print, sum, len)
+global scope : 모듈 호출된 시점 이후 혹은 인터프리터 끝날 때까지 유지(한 파일 내 a = 1)
+enclose scope : 함수 내 또 다른 함수의 영역, 중첩함수가 정의 되어 있을 때 사용되는 scope의 개념
+local scope : 함수 호출될 때 생성되고 함수 종료될 때까지 유지(def 함수 내 특정 변수 초기화)
+
+6. 
+scope 순서
+local -> enclose -> global -> built-in
+순으로 변수명을 찾을 때 탐색함.
