@@ -1,0 +1,18 @@
+1. 딕셔너리 순회 할 때, 키 값이 찍힘
+for name in 딕셔너리:
+    print(name, 딕셔너리[name])
+
+의 결과는 딕셔너리의 키 값과 값이 찍힘.
+
+2. for-else
+for char in 'apple':
+    if char == 'b':
+        print('b!')
+        break
+else:
+    print('b가 없습니다!')
+for-else 는 break로 중단되지 않으면 else를 실행하는 문법의 일종.
+
+3. python 에서
+
+a < b < c 표현식이 지원 된다.
