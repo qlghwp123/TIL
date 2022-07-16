@@ -1,0 +1,35 @@
+1. 모듈, 패키지 쓰는 법
+import module
+from module import var, function, Class
+from module import *
+
+from package import module
+from package.module import var, function, Class
+
+2, 파일 다루기
+with open(...) as 닉네임:
+    ...
+    ...
+
+닉네임.read() <- 에러
+
+즉 파일 객체를 다룰 때, with 키워드를 쓰면 해당 코드 block 이 종료될 때 
+알아서 파일 객체가 닫힌다.
+
+3. 파일 객체를 순회할 수 있다.
+with open(...) as f:
+    for line in f:
+        print(line)
+
+의 결과는 파일을 한 줄 한 줄 읽어서 출력한다.
+
+with문 : 
+with {expression} as {variable}:
+    block..
+
+4. JSON 다루기
+import json 으로 해당 모듈을 사용할 수 있다.
+
+5. pprint
+from pprint import pprint
+로 해서 pprint() 를 쓰면 많은 양의 딕셔너리 같은 것을 이쁘게 출력해준다.
