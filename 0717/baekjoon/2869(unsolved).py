@@ -1,3 +1,5 @@
+import math
+
 A, B, V = map(int, input().split())
 
 # 아래는 처음 작성한 코드.
@@ -15,10 +17,3 @@ A, B, V = map(int, input().split())
 #         result -= B
 
 # print(i)
-
-if V - B == 0:
-    result = 1
-else:
-    result = V - B // A - B
-
-print(result)
