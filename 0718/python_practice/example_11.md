@@ -112,7 +112,7 @@ def movie_info(movie, genres):
         "vote_average": movie["vote_average"],
     }
 
-		return new_movie_info
+    return new_movie_info
 
 if __name__ == "__main__":
     movie = {
