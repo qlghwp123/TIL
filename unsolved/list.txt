@@ -4,10 +4,13 @@
 
 3. 기록에는 "문제 번호 -> 상태(날짜)" 를 기록한다.
 
+4. 백준, swea 를 구분하기 위해서 접두어로 boj_ or swea_ 를 사용한다.(since 07/26)
+
 기록
 
-1193 -> solved(07/17)
-2869 -> solved(07/18)
-1929 -> solved(07/19)
-4948 -> solved(07/20)
-17478 -> solved(07/22)
+boj_1193 -> solved(07/17)
+boj_2869 -> solved(07/18)
+boj_1929 -> solved(07/19)
+boj_4948 -> solved(07/20)
+boj_17478 -> solved(07/22)
+swea_1928 -> solved(07/26)
