@@ -4,8 +4,8 @@ input = sys.stdin.readline
 
 w, h = 1, 1
 
-def dfs():
-    l
+def dfs(visited):
+    pass
 
 
 while w and h:
@@ -16,6 +16,6 @@ while w and h:
     for _ in range(h):
         l.append(list(map(int, input().rstrip().split())))
 
-    visited = [False for i in range(h) for j in range(w) if l[i][j]]
+    visited = [(False, i, j) for i in range(h) for j in range(w) if l[i][j]]
 
-    dfs()
+    dfs(visited)
