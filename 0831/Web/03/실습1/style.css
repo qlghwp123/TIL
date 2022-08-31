@@ -1,0 +1,59 @@
+/* 아래에 CSS를 작성해주세요. */
+/* ref : https://www.onlinewebfonts.com/download/174b2ec3d1b18323f2021ce3fdda6028 */
+@import url(//db.onlinewebfonts.com/c/174b2ec3d1b18323f2021ce3fdda6028?family=SamsungOne);
+@font-face {font-family: "SamsungOne"; src: url("//db.onlinewebfonts.com/t/174b2ec3d1b18323f2021ce3fdda6028.eot"); src: url("//db.onlinewebfonts.com/t/174b2ec3d1b18323f2021ce3fdda6028.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/174b2ec3d1b18323f2021ce3fdda6028.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/174b2ec3d1b18323f2021ce3fdda6028.woff") format("woff"), url("//db.onlinewebfonts.com/t/174b2ec3d1b18323f2021ce3fdda6028.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/174b2ec3d1b18323f2021ce3fdda6028.svg#SamsungOne") format("svg"); };
+
+.card-head {
+    margin: 1px auto;
+
+    line-height: 0.5rem;
+}
+
+.card-head-main {
+    text-align: center;
+
+    font-size: 50px;
+    font-family: 'SamsungOne';
+}
+
+.card-head-sub {
+    display: block;
+
+    font-size: 24px;
+    font-weight: bold;
+    font-family: 'SamsungOne';
+}
+
+.card-box {
+    margin-top: 6rem;
+    margin-left: 3rem;
+
+    display: flex;
+    /* 추가 */
+    justify-content: flex-start;
+}
+
+.card {
+    /* 상수가 아닌 자동으로 이미지 크기에 맞게 하고 싶은데 안된다. */
+    width: 600px;
+
+    margin-left: 2rem;
+
+    box-sizing: border-box;
+}
+
+.card-image {
+    border-radius: 2rem;
+    width: 90%;
+    height: 75%;
+}
+
+.card-content {
+    margin-left: 2rem;
+}
+
+.card-detail {
+    color: gray;
+    /* 줄 간격 */
+    line-height: 0.7rem;
+}
