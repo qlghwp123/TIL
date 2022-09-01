@@ -1,0 +1,221 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+  min-width: 1280px;
+  min-height: 1500px;
+  color: #333333;
+
+  box-sizing: border-box;
+}
+
+.navigation-bar {
+  /* hover 할 때, 침범 방지 */
+  z-index: 1;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  position: sticky;
+  top: 0px;
+
+  border-top: 1px solid black;
+
+  padding: 1rem;
+
+  background-color: black;
+}
+
+.nav-list {
+  display: flex;
+}
+
+.nav-item {
+  margin-right: 1rem;
+
+  color: black;
+  text-decoration: none;
+}
+
+.nav-item:hover {
+  color: blue;
+}
+
+.banner{
+  min-height: 700px;
+
+  /* http://tcpschool.com/css/css_basic_backgrounds */
+  background-image: url("../assets/apparel.jpeg");
+  /* https://www.codingfactory.net/10571 */
+  background-repeat: no-repeat;
+  /* https://devjhs.tistory.com/611 */
+  background-size: cover;
+}
+
+.index-main {
+  display: flex;
+
+  flex-direction: column;
+  align-items: center;
+}
+
+.about {
+  display: flex;
+
+  justify-content: center;
+  
+  /* body 가 1280px 으로 지정했어도 자식도 지정해줘야 하는듯 하다. */
+  width: 1280px;
+
+  margin-top: 3rem;
+}
+
+.about-img {
+  width: 500px;
+
+  border-radius: 1rem;
+}
+
+.about-text {
+  display: flex;
+
+  flex-direction: column;
+  align-items: center;
+  
+  line-height: 1.5rem;
+
+  margin-left: 5rem;
+}
+
+.about-head {
+  font-size: 2rem;
+}
+
+.about-detail {
+  margin-top: 2rem;
+
+  line-height: 2.3rem;
+
+  font-size: 20px;
+}
+
+.more {
+  display: flex;
+
+  flex-direction: column;
+  align-items: center;
+
+  /* body 가 1280px 으로 지정했어도 자식도 지정해줘야 하는듯 하다. */
+  width: 1280px;
+
+  margin-top: 3rem;
+}
+
+.more-head{
+  font-size: 2rem;
+}
+
+.more-cards {
+  display: flex;
+
+  flex-direction: row;
+  justify-content: space-around;
+
+  /* body 가 1280px 으로 지정했어도 자식도 지정해줘야 하는듯 하다. */
+  width: 1280px;
+
+  margin-top: 3rem;
+}
+
+.more-card {
+  display: flex;
+
+  flex-direction: column;
+  align-items: center;
+
+  line-height: 2rem;
+  
+  text-align: center;
+}
+
+.more-card-img {
+  width: 4rem;
+  height: 4rem;
+
+  margin-bottom: 0.5rem;
+}
+
+.top-btn {
+  position: fixed;
+
+  /* 이런 방법이 아닌 다른 방법이 있지 않을까? */
+  /* 우열님의 도움으로 top, left 가 아닌 bottom, right를 쓰면 된다! */
+  bottom: 4vh;
+  right: 2vw;
+
+  /* 크기가 없기 때문에 지정 해야한다. */
+  width: 4rem;
+  height: 4rem;
+
+  background-color: white;
+
+  background-image: url("../assets/up-arrow.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.products-main {
+  display: flex;
+
+  justify-content: center; 
+}
+
+.product-cards {
+  display: flex;
+
+  flex-wrap: wrap;
+  justify-content: space-around;
+
+  width: 1280px;
+}
+
+.product-card {
+  display: flex;
+
+  flex-direction: column;
+  align-items: center;
+
+  border: 1px solid black;
+
+  width: 350px;
+
+  padding: 0.5rem;
+
+  /* overflow 는 말 그대로 넘치는 부분을 숨긴다. */
+  overflow: hidden;
+
+  margin-top: 1rem;
+}
+
+.product-card-img {
+  /* https://www.codingfactory.net/12584 */
+  /* transition 속성은 부드럽게 확대하기 위해서 사용된다. */
+  transition: all 0.5s linear;
+
+  overflow: hidden;
+}
+
+.product-card-img:hover {
+  transform: scale(1.5);
+}
+
+.product-head {
+  font-size: 1.5rem;
+
+  margin: 1rem 0 0.5rem 0;
+}
+
+.product-detail {
+  line-height: 1.5rem;
+}
