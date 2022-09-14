@@ -1,0 +1,153 @@
+<!-- Pair Programming Practice 3-4 -->
+<!-- Driver : 윤효근 -->
+<!-- Navigator : 이동근, 이성훈 -->
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="../static/fabi.png">
+    <title>05_movie</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+
+<body>
+    <!-- navbar part -->
+    <nav class="navbar navbar-dark navbar-expand-lg bg-dark ">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="../static/logo.png" width="64">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="../index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./03_community.html">Community</a>
+                    </li>
+                    <li class="nav-item">
+                        <!-- 버튼이 아니라도 a 태그에서도 data ~ 관련 속성을 추가하면 정상적으로 동작한다. -->
+                        <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">Login</a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- modal part -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form>
+                                <div class="mb-3">
+                                    <label for="exampleInputEmail1" class="form-label">Email address</label>
+                                    <input type="email" class="form-control" id="exampleInputEmail1"
+                                        aria-describedby="emailHelp">
+                                    <div id="emailHelp" class="form-text">We'll never share your email with anyone
+                                        else.</div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="exampleInputPassword1" class="form-label">Password</label>
+                                    <input type="password" class="form-control" id="exampleInputPassword1">
+                                </div>
+                                <div class="mb-3 form-check">
+                                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Save changes</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- review part -->
+    <main class="container mb-3">
+
+        <div class="row row-cols-2 my-3">
+            <div class="col">
+                <h2 class="display-5">쇼생크 탈출</h2>
+                <p>The Shawshank Redemption, 1994</p>
+                <p><span class="fw-bold">개요</span> 드라마 | 미국 | 142분</p>
+                <p><span class="fw-bold">감독</span>프랭크 다라본트</p>
+                <p><span class="fw-bold">출연</span>팀 로빈스(앤디 듀프레인), 모건 프리먼(엘리스 보이드 레드 레딩)</p>
+                <p><span class="fw-bold">등급</span>[국내] 15세 관람가</p>
+            </div>
+            <div class="col">
+                <img src="../static/movie1.jpg">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12 col-lg-12">
+                <h3>줄거리</h3>
+                <hr />
+                <p>
+                    두려움은 너를 죄수로 가두고
+                    희망은 너를 자유롭게 하리라
+
+                    촉망 받던 은행 부지점장 ‘앤디(팀 로빈슨 分)’는 아내와 그 애인을 살해한 혐의로 종신형을 받고 쇼생크 교도소에 수감된다. 강력범들이 수감된 이곳에서 재소자들은 짐승 취급
+                    당하고, 혹여
+                    간수 눈에 잘못 보였다가는 개죽음 당하기 십상이다. 처음엔 적응 못하던 ‘앤디’는 교도소 내 모든 물건을 구해주는 ‘레드(모건 프리먼 分)’와 친해지며 교도소 생활에 적응하려
+                    하지만,
+                    악질 재소자에게 걸려 강간까지 당한다.
+                    그러던 어느 날, 간수장의 세금 면제를 도와주며 간수들의 비공식 회계사로 일하게 되고, 마침내는 소장의 검은 돈까지 관리해주게 된다. 덕분에 교도소 내 도서관을 열 수 있게 되었을
+                    무렵,
+                    신참내기 ‘토미(길 벨로우스 分)’로부터 ‘앤디’의 무죄를 입증할 기회를 얻지만, 노튼 소장은 ‘앤디’를 독방에 가두고 ‘토미’를 무참히 죽여버리는데...
+                </p>
+            </div>
+        </div>
+
+        <div class="row">
+            <h3>동영상</h3>
+            <hr />
+            <div class="col-4">
+                <div class="card">
+                    <!-- how to insert youtube miniplayer with iframe tag -->
+                    <!-- link : https://ossam5.tistory.com/73 -->
+                    <iframe height="240px" src="https://www.youtube.com/embed/Do0slRSdnVM"></iframe>
+                </div>
+            </div>
+            <div class="col-4 ">
+                <div class="card">
+                    <iframe height="240px" src="https://www.youtube.com/embed/YGwhQLmUWoo"></iframe>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="card">
+                    <iframe height="240px" src="https://www.youtube.com/embed/mSKfbb7XrNU"></iframe>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- footer part -->
+    <footer class="p-1 text-white text-center bg-dark position-sticky sticky-sm-bottom">
+        footer
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -1,0 +1,238 @@
+<!-- Pair Programming Practice 3-3 -->
+<!-- Driver : 윤효근 -->
+<!-- Navigator : 이동근, 이성훈 -->
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="../static/fabi.png">
+    <title>03_community</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+</head>
+
+<body>
+    <!-- navbar part -->
+    <nav class="navbar navbar-dark navbar-expand-lg bg-dark ">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="../static/logo.png" width="64">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="../index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./03_community.html">Community</a>
+                    </li>
+                    <li class="nav-item">
+                        <!-- 버튼이 아니라도 a 태그에서도 data ~ 관련 속성을 추가하면 정상적으로 동작한다. -->
+                        <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">Login</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- modal part -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form>
+                                <div class="mb-3">
+                                    <label for="exampleInputEmail1" class="form-label">Email address</label>
+                                    <input type="email" class="form-control" id="exampleInputEmail1"
+                                        aria-describedby="emailHelp">
+                                    <div id="emailHelp" class="form-text">We'll never share your email with anyone
+                                        else.</div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="exampleInputPassword1" class="form-label">Password</label>
+                                    <input type="password" class="form-control" id="exampleInputPassword1">
+                                </div>
+                                <div class="mb-3 form-check">
+                                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Save changes</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- title part -->
+    <section>
+        <h1 class="p-5 text-center">Community</h1>
+    </section>
+
+    <!-- table and card part -->
+    <main class="container mb-3">
+        <div class="row">
+            <!-- 요구사항에 따라서 col-12 col-sm-12 col-md-12 를 적어야할 줄 알았는데 col-12, col-lg-2 만 써도 적용된다. -->
+            <aside class="col-12 col-sm-12 col-md-12 col-lg-2 mb-3">
+                <ul class="nav flex-column">
+                    <li class="nav-item border rounded-1">
+                        <a class="nav-link active" aria-current="page" href="#">Boxoffice</a>
+                    </li>
+                    <li class="nav-item border rounded-1">
+                        <a class="nav-link" href="#">Movies</a>
+                    </li>
+                    <li class="nav-item border rounded-1">
+                        <a class="nav-link" href="#">Genres</a>
+                    </li>
+                    <li class="nav-item border rounded-1">
+                        <a class="nav-link">Actors</a>
+                    </li>
+                </ul>
+            </aside>
+            <section class="col-lg-10">
+                <!-- table -->
+
+                <!-- flex 의 속성값인 table을 넣으면 자식 개수가 어떻든 -->
+                <!-- 동일한 영역을 보장해준다. -->
+                <!-- 아래 글에서는 추가적 속성을 더 부여해줘야한다고 하지만 -->
+                <!-- 지금 상황에서는 d-lg-table 만 해줘도 충분하다. -->
+                <!-- 이유는 모르겠다. 아마 content 가 주어진 width 보다 작은 이유라고 생각한다. -->
+                <!-- link : https://www.biew.co.kr/entry/%EC%9B%B9%ED%8D%BC%EB%B8%94%EB%A6%AC%EC%85%94%EA%B0%80-%EC%95%8C%EA%B3%A0%EC%9E%88%EC%96%B4%EC%95%BC-%ED%95%A0-display-table-%EC%86%8D%EC%84%B1 -->
+
+                <!-- 또한 992px 이상일 때는 display: table; 을 적용한다.  -->
+                <!-- 그게 아닌 나머지는 display: none; 이 적용된다. -->
+                <table class="table table-striped d-none d-lg-table">
+                    <thead>
+                        <tr class="table-dark">
+                            <th scope="col">영화 제목</th>
+                            <th scope="col">글 제목</th>
+                            <th scope="col">작성자</th>
+                            <th scope="col">작성 시간</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">Great Movie title</th>
+                            <td>Best Movie Ever</td>
+                            <td>user</td>
+                            <td>1 minute ago</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Great Movie title</th>
+                            <td>movie test</td>
+                            <td>user</td>
+                            <td>1 minute ago</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Great Movie title</th>
+                            <td>movie test</td>
+                            <td>user</td>
+                            <td>1 minute ago</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Great Movie title</th>
+                            <td>movie test</td>
+                            <td>user</td>
+                            <td>1 minute ago</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Great Movie title</th>
+                            <td>movie test</td>
+                            <td>user</td>
+                            <td>1 minute ago</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <!-- cards -->
+
+                <!-- width : 992px 이상일 때만 display: none; -->
+                <!-- 속성이 적용된다. -->
+                <div class="d-lg-none">
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <h5 class="card-title">Best Movie Ever</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">Great Movie Title</h6>
+                            <p class="card-text">user</p>
+                            <p>1 minute ago</p>
+                        </div>
+                    </div>
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">Great Movie Title</h6>
+                            <p class="card-text">user</p>
+                            <p>1 minute ago</p>
+                        </div>
+                    </div>
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">Great Movie Title</h6>
+                            <p class="card-text">user</p>
+                            <p>1 minute ago</p>
+                        </div>
+                    </div>
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">Great Movie Title</h6>
+                            <p class="card-text">user</p>
+                            <p>1 minute ago</p>
+                        </div>
+                    </div>
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">Great Movie Title</h6>
+                            <p class="card-text">user</p>
+                            <p>1 minute ago</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- pagination -->
+            <nav aria-label="Page navigation example">
+                <!-- 중앙 정렬을 위해 lg 일 때, flex가 적용되게 하였다. -->
+                <ul class="pagination justify-content-center d-none d-lg-flex">
+                    <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="d-flex justify-content-end">
+            <!-- onclick action that button acts like a tag -->
+            <!-- link : https://dololak.tistory.com/765 -->
+            <button type="button" class="btn btn-primary" onclick="location.href='./04_form.html'"
+                data-bs-toggle="button">글쓰기</button>
+        </div>
+    </main>
+
+    <!-- footer part -->
+    <footer class="p-2 text-white text-center bg-dark position-sticky sticky-sm-bottom">
+        footer
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
