@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>프로젝트</title>
+    <style>
+        .ball {
+            width: 10rem;
+            height: 10rem;
+            margin: .5rem;
+            background-color: yellowgreen;
+            border-radius: 50%;
+            /* 컨텐츠 중앙, 수직 정렬 */
+            text-align: center;
+            line-height: 10rem;
+            /* 폰트 정리 */
+            font-size: xx-large;
+            font-weight: bold;
+        }
+
+        /* 수직으로 쌓아야하므로 flex가 되면 안된다. */
+        .ball-container {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>로또 추천 번호</h1>
+    <input id="ball_num" width="0.1rem;">
+    <button id="lotto-btn">행운 번호 받기(기본 6개)</button>
+    <div id="result">
+        <div class="ball-container"></div>
+    </div>
+    <!-- lodash lib import -->
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
+    <script>
+        // link : https://stickode.tistory.com/296
+        function removeAllChildren(parent) {
+            while (parent.hasChildNodes()) {
+                parent.removeChild(parent.firstChild)
+            }
+        }
+
+        // 색상 값을 담는 배열
+        const color = ['yellow', 'blue', 'red', 'black', 'green']
+
+        const button = document.querySelector('#lotto-btn')
+        button.addEventListener('click', function () {
+            // 컨테이너를 만들고 ball-container 자식 태그들을 지움으로써
+            // 이전 화면을 지운다.
+            const ballContainer = document.querySelector('.ball-container')
+            removeAllChildren(ballContainer)
+
+            // 입력 값을 받고 없으면 1으로 설정
+            let ball_num_input = document.querySelector('#ball_num').value
+            const ball_num = (ball_num_input === "") ? 1 : parseInt(ball_num_input)
+
+            for (let i = 0; i < ball_num; i++) {
+                // 한 줄을 담는 태그
+                const ball_line = document.createElement('div')
+                // 수평으로 전개
+                ball_line.style.display = 'flex'
+
+                // 공을 만들어서 =>  6개를 만들어서
+                const numbers = _.sampleSize(_.range(1, 46), 6)
+
+                // 오름차 정렬
+                // link : https://www.jyoo.dev/posts/sort-function-in-javascript-and-python
+                numbers.sort(function (a, b) {
+                    if (a > b) return 1;
+                    if (a < b) return -1;
+                    return 0;
+                })
+
+                for (let j = 0; j < 6; j++) {
+                    // ball 만들기
+                    const ball = document.createElement('div')
+                    ball.classList.add('ball')
+                    ball.innerText = numbers[j]
+
+                    // JS 는 default 가 실수라서 인덱스로 사용하려면 
+                    // 해당 값을 정수로 바꿔줘야 한다.
+                    const currentColor = parseInt((numbers[j] - 1) / 10)
+                    ball.style.backgroundColor = color[currentColor]
+
+                    // 배경이 검정일 경우 보이지 않으므로 흰색으로 바꿔준다.
+                    if (color[currentColor] === 'black') {
+                        ball.style.color = 'white'
+                    }
+
+                    // 라인에 붙인다.
+                    ball_line.appendChild(ball)
+                }
+                ballContainer.appendChild(ball_line)
+            }
+        })
+
+// 로또 공은 5가지 색깔로 되어 있습니다.
+// 1번부터 10번까지는 노란색입니다.
+// 11번 부터 20번까지는 파란색입니다.
+// 21번부터 30번까지는 빨간색입니다.
+// 31번부터 40번까지는 검은색입니다.
+// 41번부터 45번까지는 초록색입니다.
+    </script>
+</body>
+
+</html>
