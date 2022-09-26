@@ -2,3 +2,5 @@
 0707/TIL.md
 clone_test/
 *.exe
+venv/
+__pycache__/

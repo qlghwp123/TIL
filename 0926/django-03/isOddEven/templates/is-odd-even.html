@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>
+        {{ val }}은
+        {% if val == 0 %}
+        짝수도 홀수도 아닙니다.
+        {% elif ret %}
+        짝수입니다.
+        {% else %}
+        홀수입니다.
+        {% endif %}
+    </h1>
+</body>
+
+</html>

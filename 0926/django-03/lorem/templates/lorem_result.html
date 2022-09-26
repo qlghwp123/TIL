@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div>
+    {% for i in ret %}
+    {% for j in i %}
+    <p class=" d-inline fw-bold">{{ j }}</p>
+    {% endfor %}
+    <hr />
+    {% endfor %}
+</div>
+{% endblock %}

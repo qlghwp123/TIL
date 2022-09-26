@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lotto</title>
+
+    <style>
+        .line {
+            display: flex;
+        }
+
+        .number {
+            margin: 0.5rem 2rem 0.5rem 0px;
+
+            font-weight: bold;
+            font-size: 4rem;
+        }
+    </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <h2 class="bg-dark text-white fw-bold display-4 text-center my-5 rounded-5">로또 생성기</h2>
+            <!-- link : https://docs.djangoproject.com/en/4.1/ref/templates/builtins/ -->
+            {% for i, j in numbers.items %}
+            <div class="text-white bg-primary d-flex justify-content-center p-4">
+                <!-- link : https://docs.djangoproject.com/en/4.1/ref/templates/builtins/ -->
+                {% if j.6 == '꽝' %}
+                <!-- link : https://stackoverflow.com/questions/19745091/accessing-dictionary-by-key-in-django-template -->
+                <p class="fw-bold fs-3 py-1 pe-3 mb-0 text-center">{{ j.6 }}</p>
+                {% else %}
+                <p class="fw-bold fs-3 py-1 pe-3 mb-0 text-center">{{ j.6 }}등</p>
+                {% endif %}
+                <!-- link : https://stackoverflow.com/questions/23422542/slicing-a-list-in-django-template -->
+                {% for k in j|slice:":6" %}
+                <p class="fw-bold fs-3 py-1 pe-3 mb-0 text-center">{{ k }} </p>
+                {% endfor %}
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

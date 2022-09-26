@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<form action="/lorem-result" method="GET">
+    <h4>문단의 수</h4>
+    <input type="text" name="para-cnt">
+    <h4>문단별 단어의 수</h4>
+    <input type="text" name="word-cnt">
+    <button class="btn btn-primary" type="submit">생성</button>
+</form>
+{% endblock %}
