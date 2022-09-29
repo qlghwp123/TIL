@@ -1,0 +1,118 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!-- input group -->
+<form action="{% url 'todo:create' %}" method="POST">
+    {% csrf_token %}
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="inputGroup-sizing-default">할일</span>
+        <input type="text" class="form-control" aria-label="Sizing example input"
+            aria-describedby="inputGroup-sizing-default" name="content">
+    </div>
+
+    <div class="input-group mb-3">
+        <label class="input-group-text" for="inputGroupSelect01">우선 순위</label>
+        <select class="form-select" id="inputGroupSelect01" name="priority">
+            <option selected>선택하세요</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+    </div>
+
+    <div class="input-group mb-3">
+        <label class="input-group-text" for="inputGroupDateSelect">마감 기한</label>
+        <input type="date" class="form-control" id="inputGroupDateSelect" name="deadline">
+    </div>
+    <button type="submit" class="btn btn-outline-primary w-100">할 일 추가</button>
+</form>
+
+<!-- table -->
+<table class="table table-hover align-middle text-center">
+    <thead>
+        <tr>
+            <th scope="col">우선 순위</th>
+            <th scope="col">할 일</th>
+            <th scope="col">생성 날짜</th>
+            <th scope="col">마감 기한</th>
+            <th scope="col">진행 상태</th>
+            <th scope="col">변경</th>
+            <th scope="col">삭제</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for i in db_data %}
+        <tr>
+            <th scope="row">{{ i.priority }}</th>
+            <td>{{ i.content }}</td>
+            <!-- date format in dtl -->
+            <!-- ref : https://ssungkang.tistory.com/entry/DjangoDate%EC%99%80-Time%EC%9D%84-%EB%82%98%ED%83%80%EB%82%B4%EB%8A%94-template-filter -->
+            <td>{{ i.created_at|date:'Y-m-d' }}</td>
+            <td>{{ i.deadline|date:'Y-m-d' }}</td>
+            <td>{{ i.completed }}</td>
+            <td><button type="submit" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#Modal{{ i.id }}"
+                    data-bs-whatever="{{ i.id }}">변경</button></td>
+            <form action="{% url 'todo:delete' i.id %}" method="POST">
+                {% csrf_token %}
+                <td><button type="submit" class="btn btn-danger">삭제</button></td>
+            </form>
+        </tr>
+
+        <!-- about modal + i.id -->
+        <!-- ref : https://stackoverflow.com/questions/35777410/multi-modals-bootstrap-in-for-loop-django -->
+        <div class="modal fade" id="Modal{{ i.id }}" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel-{{ i.id }}">수정</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <form action="{% url 'todo:update' i.id %}" method="POST">
+                        {% csrf_token %}
+                        <div class="modal-body">
+                            <div class="mb-3">
+                                <label for="content-text{{ i.id }}" class="col-form-label">할 일:</label>
+                                <input type="text" class="form-control" id="content-text{{ i.id }}" name="content"
+                                    value="{{ i.content }}">
+                            </div>
+                            <div class="mb-3">
+                                <label for="priority-text{{ i.id }}" class="col-form-label">우선 순위:</label>
+                                <select type="text" class="form-select" id="priority-text{{ i.id }}" name="priority">
+                                    <option selected>{{ i.priority }}</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="modalDateSelect{{ i.id }}" class="col-form-label">마감 기한:</label>
+                                <!-- date format in dtl -->
+                                <!-- ref : https://ssungkang.tistory.com/entry/DjangoDate%EC%99%80-Time%EC%9D%84-%EB%82%98%ED%83%80%EB%82%B4%EB%8A%94-template-filter -->
+                                <input type="date" class="form-control" id="modalDateSelect{{ i.id }}" name="deadline"
+                                    value="{{ i.deadline|date:'y-m-d' }}">
+                            </div>
+                            <div class="mb-3">
+                                <label for="completed-text{{ i.id }}" class="col-form-label">진행 상태:</label>
+                                <select type="text" class="form-select" id="completed-text{{ i.id }}" name="completed">
+                                    <option selected>{{ i.completed }}</option>
+                                    <option value="0">0</option>
+                                    <option value="1">1</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
+                            <button type="submit" class="btn btn-primary">수정하기</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
