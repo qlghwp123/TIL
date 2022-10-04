@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<a href="{% url 'articles:create' %}">글 추가</a>
+
+<hr />
+
+{% for i in data %}
+<h1><a href="{% url 'articles:detail' i.id %}" style="text-decoration: none;">{{ i.title }}</a></h1>
+<p>{{ i.created_at|date:'Y-m-d h:m:s' }} <span>{{ i.updated_at|date:'Y-m-d h:m:s' }}</span></p>
+<p>{{ i.content }}</p>
+<hr />
+{% endfor %}
+
+{% endblock %}
